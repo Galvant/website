@@ -111,65 +111,102 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <section data-route="home">
               <paper-material elevation="1">
-                <my-greeting></my-greeting>
+                <!-- <my-greeting></my-greeting> -->
+				<p> Welcome to our new website! </p>
 
-                <p class="paper-font-subhead">You now have:</p>
-                <my-list></my-list>
+                <!-- <p class="paper-font-subhead">You now have:</p>
+                <my-list></my-list> -->
 
-                <p class="paper-font-body2">Looking for more Web App layouts? Check out our <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p>
-              </paper-material>
-              <paper-material elevation="1">
-                <p class="paper-font-body2">This is another card.</p>
-              </paper-material>
+				<p> Please email sales@galvant.ca if you would like to place an order. </p>
 
             </section>
 
             <section data-route="store">
-				<div style="padding:10px;">
-					<paper-item>
-						<div>
-							<iron-image src="/images/gpibusb-rev4-01.png" style="width:450px; height:300px;" sizing="contain"></iron-image>
-						</div>
-						<div style="padding:10px">
-							<paper-item-body two-line>
-								<div>GPIBUSB rev4</div>
-								<div secondary>$65/pc</div>
-							</paper-item-body>
-							<ul>
-								<li>derp</li>
-								<li>derp</li>
-								<li>derp</li>
-							</ul>
-						</div>
-					</paper-item>
-				</div>
+				<paper-material elevation="1">
+					<div style="padding:10px;">
+						<paper-item>
+							<div>
+								<a href="/store/gpibusb">
+								<iron-image src="/images/gpibusb-rev4-01.png"
+											style="width:450px; height:300px;"
+											sizing="contain">
+								</iron-image>
+								</a>
+							</div>
+							<div style="padding:10px">
+								<paper-item-body two-line>
+									<div>GPIBUSB rev4</div>
+									<div secondary>$65/pc</div>
+								</paper-item-body>
+								<ul>
+									<li>derp</li>
+									<li>derp</li>
+									<li>derp</li>
+								</ul>
+							</div>
+						</paper-item>
+					</div>
 				
-				<div style="padding:10px;">
-					<paper-item>
-						<div>
-							<iron-image src="/images/gpibusb-rev4-01.png" style="width:450px; height:300px;" sizing="contain"></iron-image>
-						</div>
-						<div style="padding:10px">
-							<paper-item-body two-line>
-								<div>GPIBUSB rev4</div>
-								<div secondary>$65/pc</div>
-							</paper-item-body>
-							<ul>
-								<li>derp</li>
-								<li>derp</li>
-								<li>derp</li>
-							</ul>
-						</div>
-					</paper-item>
-				</div>
+					<div style="padding:10px;">
+						<paper-item>
+							<div>
+								<iron-image src="/images/gpibusb-rev4-01.png" 
+											style="width:450px; height:300px;" 
+											sizing="contain">
+								</iron-image>
+							</div>
+							<div style="padding:10px">
+								<paper-item-body two-line>
+									<div>GPIBUSB rev4</div>
+									<div secondary>$65/pc</div>
+								</paper-item-body>
+								<ul>
+									<li>derp</li>
+									<li>derp</li>
+									<li>derp</li>
+								</ul>
+							</div>
+						</paper-item>
+					</div>
+				</paper-material>
+				
             </section>
 
             <section data-route="product-info">
               <paper-material elevation="1">
                 <h2 class="paper-font-display2">
-                Product: <span>{{params.name}}</span>
+                <!-- <span>{{params.product}}</span> -->
+				GPIBUSB rev4
                 </h2>
-                <div>This is <span>{{params.name}}</span>'s section</div>
+                <!-- <div>This is <span>{{params.product}}</span>'s section</div> -->
+				<div style="padding:10px;">
+					<paper-item>
+						<div>
+							<a href="/store/gpibusb">
+							<iron-image src="/images/gpibusb-rev4-01.png"
+										style="width:450px; height:300px;"
+										sizing="contain">
+							</iron-image>
+							</a>
+						</div>
+						<div style="padding:10px">
+							<paper-item-body two-line>
+								<div>GPIBUSB rev4</div>
+								<div secondary>$65/pc</div>
+							</paper-item-body>
+							<ul>
+								<li>derp</li>
+								<li>derp</li>
+								<li>derp</li>
+							</ul>
+						</div>
+					</paper-item>
+					<ul>
+						<li>derp</li>
+						<li>derp</li>
+						<li>derp</li>
+					</ul>
+				</div>	
               </paper-material>
             </section>
 
@@ -194,9 +231,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </paper-header-panel>
     </paper-drawer-panel>
 
-    <paper-toast id="caching-complete"
+    <!-- <paper-toast id="caching-complete"
                  duration="6000"
-                 text="Caching complete! This app will work offline.">
+                 text="Caching complete! This website will work offline.">
     </paper-toast>
 
     <platinum-sw-register auto-register
@@ -206,7 +243,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <platinum-sw-cache default-cache-strategy="networkFirst"
                          precache-file="precache.json">
       </platinum-sw-cache>
-    </platinum-sw-register>
+    </platinum-sw-register> -->
 
   </template>
 
