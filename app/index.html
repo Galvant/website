@@ -2,106 +2,106 @@
 <html lang="">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="generator" content="Galvant Industries" />
-	<title>Galvant Industries</title>
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Galvant Industries" />
+  <title>Galvant Industries</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-	<!-- Chrome for Android theme color -->
-	<meta name="theme-color" content="#303F9F">
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#303F9F">
 
-	<!-- Web Application Manifest -->
-	<link rel="manifest" href="manifest.json">
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
 
-	<!-- Tile color for Win8 -->
-	<meta name="msapplication-TileColor" content="#3372DF">
+  <!-- Tile color for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
 
-	<!-- Add to homescreen for Chrome on Android -->
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="application-name" content="Galvant Industries">
-	<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Galvant Industries">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
 
-	<!-- Add to homescreen for Safari on iOS -->
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-title" content="Galvant Industries">
-	<link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Galvant Industries">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
 
-	<!-- Tile icon for Win8 (144x144) -->
-	<meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <!-- Tile icon for Win8 (144x144) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
 
-	<!-- build:css styles/main.css -->
-	<link rel="stylesheet" href="styles/main.css">
-	<!-- endbuild-->
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
 
-	<!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
-	<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-	<!-- endbuild -->
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
 
-	<!-- will be replaced with elements/elements.vulcanized.html -->
-	<link rel="import" href="elements/elements.html">
-	<!-- endreplace-->
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
 </head>
 
 <body unresolved class="fullbleed layout vertical">
-	<span id="browser-sync-binding"></span>
-	<template is="dom-bind" id="app">
+  <span id="browser-sync-binding"></span>
+  <template is="dom-bind" id="app">
 
-		<paper-drawer-panel id="paperDrawerPanel">
-			<div drawer>
+    <paper-drawer-panel id="paperDrawerPanel">
+      <div drawer>
 
-				<!-- Drawer Toolbar -->
-				<paper-toolbar id="drawerToolbar">
-					<span class="paper-font-title">Menu</span>
-				</paper-toolbar>
+        <!-- Drawer Toolbar -->
+        <paper-toolbar id="drawerToolbar">
+          <span class="paper-font-title">Menu</span>
+        </paper-toolbar>
 
-				<!-- Drawer Content -->
-					<paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
-							<a data-route="home" href="/">
-								<iron-icon icon="home"></iron-icon>
-								<span>Home</span>
-							</a>
+        <!-- Drawer Content -->
+          <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
+              <a data-route="home" href="/">
+                <iron-icon icon="home"></iron-icon>
+                <span>Home</span>
+              </a>
 
-							<a data-route="store" href="/store">
-								<iron-icon icon="store"></iron-icon>
-								<span>Products</span>
-							</a>
+              <a data-route="store" href="/store">
+                <iron-icon icon="store"></iron-icon>
+                <span>Products</span>
+              </a>
 
-							<a data-route="contact" href="/contact">
-								<iron-icon icon="mail"></iron-icon>
-								<span>Contact</span>
-							</a>
-					</paper-menu>
-			</div>
-			<paper-header-panel main mode="waterfall-tall">
+              <a data-route="contact" href="/contact">
+                <iron-icon icon="mail"></iron-icon>
+                <span>Contact</span>
+              </a>
+          </paper-menu>
+      </div>
+      <paper-header-panel main mode="waterfall-tall">
 
-				<!-- Main Toolbar -->
-				<paper-toolbar id="mainToolbar">
-					<paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-					<span class="flex"></span>
+        <!-- Main Toolbar -->
+        <paper-toolbar id="mainToolbar">
+          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+          <span class="flex"></span>
 
-					<!-- Application name -->
-					<div class="middle paper-font-display2 app-name">Galvant Industries</div>
+          <!-- Application name -->
+          <div class="middle paper-font-display2 app-name">Galvant Industries</div>
 
-					<!-- Application sub title -->
-					<div class="bottom title"></div>
-				</paper-toolbar>
+          <!-- Application sub title -->
+          <div class="bottom title"></div>
+        </paper-toolbar>
 
-				<!-- Main Content -->
-				<div class="content">
-					<iron-pages attr-for-selected="data-route" selected="{{route}}">
+        <!-- Main Content -->
+        <div class="content">
+          <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
-						<section data-route="home">
-							<paper-material elevation="1">
-								<!-- <my-greeting></my-greeting> -->
+            <section data-route="home">
+              <paper-material elevation="1">
+                <!-- <my-greeting></my-greeting> -->
 				<p> Welcome to our new website! </p>
 				<p> Please email sales@galvant.ca if you would like to place an order. </p>
 
-						</section>
+            </section>
 
-						<section data-route="store">
+            <section data-route="store">
 				<paper-material elevation="1">
 					<div style="padding:10px;">
 						<paper-item>
@@ -150,15 +150,15 @@
 					</div>
 				</paper-material>
 				
-						</section>
+            </section>
 
-						<section data-route="product-info">
-							<paper-material elevation="1">
-								<h2 class="paper-font-display2">
-								<!-- <span>{{params.product}}</span> -->
+            <section data-route="product-info">
+              <paper-material elevation="1">
+                <h2 class="paper-font-display2">
+                <!-- <span>{{params.product}}</span> -->
 				GPIBUSB rev4
-								</h2>
-								<!-- <div>This is <span>{{params.product}}</span>'s section</div> -->
+                </h2>
+                <!-- <div>This is <span>{{params.product}}</span>'s section</div> -->
 				<div style="padding:10px;">
 					<paper-item>
 						<div>
@@ -187,28 +187,28 @@
 						<li>derp</li>
 					</ul>
 				</div>	
-							</paper-material>
-						</section>
+              </paper-material>
+            </section>
 
-						<section data-route="contact">
-							<paper-material elevation="1">
-								<h2 class="paper-font-display2">Contact</h2>
-								<p>Email: contact@galvant.ca</p>
-								<p>Twitter: @galvant_ind</p>
-								<p>Github: github.com/Galvant</p>
-							</paper-material>
-						</section>
+            <section data-route="contact">
+              <paper-material elevation="1">
+                <h2 class="paper-font-display2">Contact</h2>
+                <p>Email: contact@galvant.ca</p>
+				        <p>Twitter: @galvant_ind</p>
+				        <p>Github: github.com/Galvant</p>
+              </paper-material>
+            </section>
 
-					</iron-pages>
-				</div>
-			</paper-header-panel>
-		</paper-drawer-panel>
+          </iron-pages>
+        </div>
+      </paper-header-panel>
+    </paper-drawer-panel>
 
-	</template>
+  </template>
 
-	<!-- build:js scripts/app.js -->
-	<script src="scripts/app.js"></script>
-	<!-- endbuild-->
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
 </body>
 
 </html>
