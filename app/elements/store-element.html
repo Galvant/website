@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="../bower_components/iron-image/iron-image.html">
+    <link rel="import" href="../bower_components/paper-item/paper-item.html">
+    <link rel="import" href="../bower_components/paper-item/paper-item-body.html">
+</head>
+
+<dom-module id="store-element">
+  <style>
+    /* CSS rules for your element */
+  </style>
+  <template>
+    <template is="dom-repeat" items="{{products}}">
+      <div style="padding:10px;">
+        <paper-item>
+          <div>
+            <a href="{{item.link}}">
+            <iron-image src="{{item.image}}"
+                  style="width:450px; height:300px;"
+                  sizing="contain">
+            </iron-image>
+            </a>
+          </div>
+          <div style="padding:10px">
+            <paper-item-body two-line>
+              <div><span>{{item.title}}</span></div>
+              <div secondary>$<span>{{item.price}}</span>/pc</div>
+            </paper-item-body>
+            <ul>
+              <template is="dom-repeat" items="{{item.bulletPoints}}" as="bullet">
+                <li><span>{{bullet}}</span></li>
+              </template>
+            </ul>
+          </div>
+        </paper-item>
+      </div>
+    </template>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "store-element",
+    properties: {
+        products: {
+          type: Array
+        }
+    },
+    ready: function(e){
+        this.products = [
+          {
+            title: 'GPIBUSB rev4',
+            link: '/store/gpibusb',
+            image: '/images/gpibusb-rev4-01.png',
+            price: 65,
+            bulletPoints: [
+              'derp1',
+              'derp2',
+              'derp3'
+            ]
+          },
+          {
+            title: 'antiAFK',
+            link: '/store/antiafk',
+            image: '/images/antiafk-rev1-01.png',
+            price: 20,
+            bulletPoints: [
+              'derp1',
+              'derp2',
+              'derp3'
+            ]
+          }
+        ]
+    }
+  });
+</script>
