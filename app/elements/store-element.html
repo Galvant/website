@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
     <link rel="import" href="../bower_components/iron-image/iron-image.html">
     <link rel="import" href="../bower_components/paper-item/paper-item.html">
     <link rel="import" href="../bower_components/paper-item/paper-item-body.html">
@@ -12,6 +13,7 @@
     /* CSS rules for your element */
   </style>
   <template>
+    <iron-ajax auto url="products.json" handleAs="json" on-response="hresponse"></iron-ajax>
     <template is="dom-repeat" items="{{products}}">
       <div style="padding:10px;">
         <paper-item>
@@ -45,33 +47,16 @@
     properties: {
         products: {
           type: Array
+        },
+        productsJson: {
+          type: String
         }
     },
     ready: function(e){
-        this.products = [
-          {
-            title: 'GPIBUSB rev4',
-            link: '/store/gpibusb',
-            image: '/images/gpibusb-rev4-01.png',
-            price: 65,
-            bulletPoints: [
-              'derp1',
-              'derp2',
-              'derp3'
-            ]
-          },
-          {
-            title: 'antiAFK',
-            link: '/store/antiafk',
-            image: '/images/antiafk-rev1-01.png',
-            price: 20,
-            bulletPoints: [
-              'derp1',
-              'derp2',
-              'derp3'
-            ]
-          }
-        ]
+
+    },
+    hresponse: function( data ) {
+      this.products = data.detail.response;
     }
   });
 </script>

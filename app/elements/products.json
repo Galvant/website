@@ -1,0 +1,24 @@
+[
+  {
+    "title": "GPIBUSB rev4",
+    "link": "/store/gpibusb",
+    "image": "/images/gpibusb-rev4-01.png",
+    "price": 65,
+    "bulletPoints": [
+      "derp1",
+      "derp2",
+      "derp3"
+    ]
+  },
+  {
+    "title": "antiAFK",
+    "link": "/store/antiafk",
+    "image": "/images/antiafk-rev1-01.png",
+    "price": 20,
+    "bulletPoints": [
+      "derp1",
+      "derp2",
+      "derp3"
+    ]
+  }
+]
