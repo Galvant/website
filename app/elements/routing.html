@@ -26,6 +26,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     page('/store/:product', function (data) {
       app.route = 'product-info';
       app.params = data.params;
+      var storeDetailElement = document.querySelector('store-list-detail');
+      storeDetailElement.url = '/store/' + app.params.product;
     });
 
     page('/contact', function () {

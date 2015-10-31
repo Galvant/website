@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+    <link rel="import" href="../bower_components/iron-image/iron-image.html">
+    <link rel="import" href="../bower_components/paper-item/paper-item.html">
+    <link rel="import" href="../bower_components/paper-item/paper-item-body.html">
+</head>
+
+<dom-module id="store-list-detail">
+  <style>
+    /* CSS rules for your element */
+  </style>
+  <template>
+    <iron-ajax auto url="products.json" handleAs="json" on-response="hresponse"></iron-ajax>
+    <h2 class="paper-font-display2">
+      url: <span>{{url}}</span>
+    </h2>
+    <!-- <div>This is <span>{{params.product}}</span>'s section</div> -->
+    <div style="padding:10px;">
+      <paper-item>
+        <div>
+          <iron-image src="/images/gpibusb-rev4-01.png"
+                style="width:450px; height:300px;"
+                sizing="contain">
+          </iron-image>
+        </div>
+        <div style="padding:10px">
+          <paper-item-body two-line>
+            <div>GPIBUSB rev4</div>
+            <div secondary>$65/pc</div>
+          </paper-item-body>
+          <ul>
+            <li>derp</li>
+            <li>derp</li>
+            <li>derp</li>
+          </ul>
+        </div>
+      </paper-item>
+      <ul>
+        <li>derp</li>
+        <li>derp</li>
+        <li>derp</li>
+      </ul>
+    </div>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "store-list-detail",
+    properties: {
+        products: {
+          type: Array
+        },
+        productsJson: {
+          type: String
+        }
+    },
+    ready: function(e){
+    },
+    hresponse: function( data ) {
+      this.products = data.detail.response;
+    }
+  });
+</script>
