@@ -17,10 +17,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     // More info: https://visionmedia.github.io/page.js/
     page('/', function () {
       app.route = 'home';
+      setDrawerRoute();
     });
 
     page('/store', function () {
       app.route = 'store';
+      setDrawerRoute();
     });
 
     page('/store/:product', function (data) {
@@ -38,16 +40,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     page('/contact', function () {
       app.route = 'contact';
+      setDrawerRoute();
     });
 
     page('/about', function () {
       app.route = 'about';
+      setDrawerRoute();
     });
 
     // add #! before urls
     page({
       hashbang: true
     });
+    
+    function setDrawerRoute() {
+      var drawerContentElement = document.querySelector('drawer-content');
+      drawerContentElement.route = app.route;
+    }
 
   });
 </script>
