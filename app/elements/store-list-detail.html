@@ -12,36 +12,36 @@
   <style>
     /* CSS rules for your element */
   </style>
+  
   <template>
-    <iron-ajax auto url="products.json" handleAs="json" on-response="hresponse"></iron-ajax>
     <h2 class="paper-font-display2">
       url: <span>{{url}}</span>
     </h2>
-    <!-- <div>This is <span>{{params.product}}</span>'s section</div> -->
+
     <div style="padding:10px;">
       <paper-item>
         <div>
-          <iron-image src="/images/gpibusb-rev4-01.png"
+          <iron-image src="{{product.image}}"
                 style="width:450px; height:300px;"
                 sizing="contain">
           </iron-image>
         </div>
         <div style="padding:10px">
           <paper-item-body two-line>
-            <div>GPIBUSB rev4</div>
-            <div secondary>$65/pc</div>
+            <div>{{product.title}}</div>
+            <div secondary>$<span>{{product.price}}</span>/pc</div>
           </paper-item-body>
           <ul>
-            <li>derp</li>
-            <li>derp</li>
-            <li>derp</li>
+            <template is="dom-repeat" items="{{product.bulletPoints}}" as="bullet">
+              <li><span>{{bullet}}</span></li>
+            </template>
           </ul>
         </div>
       </paper-item>
       <ul>
-        <li>derp</li>
-        <li>derp</li>
-        <li>derp</li>
+        <template is="dom-repeat" items="{{product.bulletPoints}}" as="bullet">
+          <li><span>{{bullet}}</span></li>
+        </template>
       </ul>
     </div>
   </template>
@@ -50,17 +50,17 @@
   Polymer({
     is: "store-list-detail",
     properties: {
-        products: {
-          type: Array
+        product: {
+          type: Object
         },
-        productsJson: {
+        url: {
           type: String
         }
     },
     ready: function(e){
+      console.log('ready');
     },
     hresponse: function( data ) {
-      this.products = data.detail.response;
     }
   });
 </script>
