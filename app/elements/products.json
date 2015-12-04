@@ -8,7 +8,8 @@
       "derp1",
       "derp2",
       "derp3"
-    ]
+    ],
+    "description": "This is the extended description for the gpibusb rev4"
   },
   {
     "title": "antiAFK",
@@ -19,6 +20,7 @@
       "derp1",
       "derp2",
       "derp3"
-    ]
+    ],
+    "description": "This is the extended description for the antiAFK"
   }
 ]
