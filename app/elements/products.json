@@ -5,9 +5,9 @@
     "image": "/images/gpibusb-rev4-01.png",
     "price": 65,
     "bulletPoints": [
-      "derp1",
-      "derp2",
-      "derp3"
+      "GPIB/HPIB to USB adapter",
+      "Cross platform",
+      "Python communication code available"
     ],
     "description": "This is the extended description for the gpibusb rev4"
   },
@@ -17,9 +17,9 @@
     "image": "/images/antiafk-rev1-01.png",
     "price": 20,
     "bulletPoints": [
-      "derp1",
-      "derp2",
-      "derp3"
+      "Virtual keyboard",
+      "Randomizes keypresses",
+      "Stay logged into your favourite game!"
     ],
     "description": "This is the extended description for the antiAFK"
   }
