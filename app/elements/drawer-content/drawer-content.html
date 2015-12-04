@@ -20,26 +20,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
     
     <paper-listbox class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
-      <paper-item data-route="home">
-        <a href="/">
-          <iron-icon icon="home"></iron-icon>
-          <span>Home</span>
-        </a>
-      </paper-item>
+      <paper-icon-item data-route="home" on-tap="menuItemSelected" mypath="/">
+        <iron-icon icon="home" item-icon></iron-icon>Home
+      </paper-icon-item>
+    
+      <paper-icon-item data-route="store" on-tap="menuItemSelected" mypath="/store">
+        <iron-icon icon="store" item-icon></iron-icon>Products
+      </paper-icon-item>
       
-      <paper-item data-route="store">
-        <a href="/store">
-          <iron-icon icon="store"></iron-icon>
-          <span>Products</span>
-        </a>
-      </paper-item>
-      
-      <paper-item data-route="contact">
-        <a href="/contact">
-          <iron-icon icon="mail"></iron-icon>
-          <span>Contact</span>
-        </a>
-      </paper-item>
+      <paper-icon-item data-route="contact" on-tap="menuItemSelected" mypath="/contact">
+        <iron-icon icon="mail" item-icon></iron-icon>Contact
+      </paper-icon-item>
     </paper-listbox>
     
   </template>
@@ -62,6 +53,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         if (drawerPanel.narrow) {
           drawerPanel.closeDrawer();
         }
+      },
+      menuItemSelected: function( e ){
+        var mypath = e.currentTarget.getAttribute('mypath');
+        page(mypath);
       }
     });
   })();
