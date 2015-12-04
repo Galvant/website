@@ -19,22 +19,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
     
-    <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
-      <a data-route="home" href="/">
-        <iron-icon icon="home"></iron-icon>
-        <span>Home</span>
-      </a>
-  
-      <a data-route="store" href="/store">
-        <iron-icon icon="store"></iron-icon>
-        <span>Products</span>
-      </a>
-  
-      <a data-route="contact" href="/contact">
-        <iron-icon icon="mail"></iron-icon>
-        <span>Contact</span>
-      </a>
-    </paper-menu>
+    <paper-listbox class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
+      <paper-item data-route="home">
+        <a href="/">
+          <iron-icon icon="home"></iron-icon>
+          <span>Home</span>
+        </a>
+      </paper-item>
+      
+      <paper-item data-route="store">
+        <a href="/store">
+          <iron-icon icon="store"></iron-icon>
+          <span>Products</span>
+        </a>
+      </paper-item>
+      
+      <paper-item data-route="contact">
+        <a href="/contact">
+          <iron-icon icon="mail"></iron-icon>
+          <span>Contact</span>
+        </a>
+      </paper-item>
+    </paper-listbox>
     
   </template>
   <script>
