@@ -14,16 +14,10 @@
   </style>
   <template>
     <iron-ajax auto url="products.json" handleAs="json" on-response="hresponse"></iron-ajax>
-    <template is="dom-repeat" items="{{products}}">
-      <div style="padding:10px;">
-        <paper-item>
+      <template is="dom-repeat" items="{{products}}">
+        <paper-item style="padding:10px" on-tap="productItemSelected" mypath$="{{item.link}}">
           <div>
-            <a href="{{item.link}}">
-            <iron-image src="{{item.image}}"
-                  style="width:450px; height:300px;"
-                  sizing="contain">
-            </iron-image>
-            </a>
+            <iron-image src="{{item.image}}" style="width:450px; height:300px;" sizing="contain"></iron-image>
           </div>
           <div style="padding:10px">
             <paper-item-body two-line>
@@ -37,8 +31,7 @@
             </ul>
           </div>
         </paper-item>
-      </div>
-    </template>
+      </template>
   </template>
 </dom-module>
 <script>
@@ -57,6 +50,10 @@
     },
     hresponse: function( data ) {
       this.products = data.detail.response;
+    },
+    productItemSelected: function( e ){
+      var mypath = e.currentTarget.getAttribute('mypath');
+      page(mypath);
     }
   });
 </script>
