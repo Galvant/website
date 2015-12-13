@@ -20,6 +20,9 @@ var merge = require('merge-stream');
 var path = require('path');
 var fs = require('fs');
 var glob = require('glob');
+var s3 = require('gulp-s3');
+
+var awsCredentials = JSON.parse(fs.readFileSync('./aws.json'));
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -236,6 +239,16 @@ gulp.task('default', ['clean'], function (cb) {
     ['jshint', 'images', 'fonts', 'html'],
     'vulcanize', 'precache',
     cb);
+});
+
+gulp.task('upload', ['default'], function() {
+  return gulp.src('dist/**')
+    .pipe(s3(awsCredentials, {
+      uploadPath: "/",
+      headers: {
+          'x-amz-acl': 'public-read'
+      }
+    }));
 });
 
 // Load tasks for web-component-tester
