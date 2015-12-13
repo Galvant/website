@@ -6,16 +6,46 @@
     <link rel="import" href="../bower_components/iron-image/iron-image.html">
     <link rel="import" href="../bower_components/paper-item/paper-item.html">
     <link rel="import" href="../bower_components/paper-item/paper-item-body.html">
+    <link rel="import" href="../bower_components/paper-button/paper-button.html">
+    <link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
 </head>
 
 <dom-module id="store-list-detail">
   <style>
-    /* CSS rules for your element */
+    .description-title {
+      padding-top: 15px;
+      padding-bottom: 5px;
+      font-weight: 500;
+      font-size: 24px;
+      font-family: 'Roboto', 'Noto', sans-serif;
+    }
+    .description-item {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      font-family: 'Roboto', 'Noto', sans-serif;
+    }
+    paper-item-body div {
+      font-size: 20px;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+    paper-item-body {
+      padding: 10px;
+    }
+    paper-button {
+      background-color: var(--paper-indigo-500);
+      color: white;
+    }
+    paper-dialog {
+      font-family: 'Roboto', 'Noto', sans-serif;
+      font-size: 20px;
+      padding: 20px;
+    }
   </style>
   
   <template>
     <h2 class="paper-font-display2">
-      url: <span>{{url}}</span>
+      <span>{{product.title}}</span>
     </h2>
 
     <div style="padding:10px;">
@@ -27,19 +57,20 @@
           </iron-image>
         </div>
         <div style="padding:10px">
-          <paper-item-body two-line>
-            <div>{{product.title}}</div>
-            <div secondary>$<span>{{product.price}}</span>/pc</div>
+          <paper-item-body>
+            <div>$<span>{{product.price}}</span>/pc</div>
+            <paper-button raised on-tap="toggleDialog">Buy Now</paper-button>
           </paper-item-body>
-          <ul>
-            <template is="dom-repeat" items="{{product.bulletPoints}}" as="bullet">
-              <li><span>{{bullet}}</span></li>
-            </template>
-          </ul>
+          <paper-dialog id="dialog">Please send an email to sales@galvant.ca to place an order.</paper-dialog>
         </div>
       </paper-item>
       <ul>
-        <span>{{product.description}}</span>
+        <template is="dom-repeat" items="{{_toArray(product.description)}}">
+          <div class="description-title">{{item.name}}</div>
+          <template is="dom-repeat" items="{{item.value}}">
+            <div class="description-item">{{item}}</div>
+          </template>
+        </template>
       </ul>
     </div>
   </template>
@@ -59,6 +90,17 @@
       console.log('ready');
     },
     hresponse: function() {
+    },
+    _toArray: function(obj) {
+      return Object.keys(obj).map(function(key) {
+        return {
+          name: key,
+          value: obj[key]
+        };
+      });
+    },
+    toggleDialog: function() {
+      this.$.dialog.toggle();
     }
   });
 </script>

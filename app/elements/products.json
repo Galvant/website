@@ -3,13 +3,19 @@
     "title": "GPIBUSB rev4",
     "link": "/store/gpibusb",
     "image": "/images/gpibusb-rev4-01.jpg",
-    "price": 65,
+    "price": 70,
     "bulletPoints": [
       "GPIB/HPIB to USB adapter",
       "Cross platform",
       "Python communication code available"
     ],
-    "description": "This is the extended description for the gpibusb rev4"
+    "description": {
+      "About": [
+        "Many pieces of test & measurement equipment feature a connectivity port labelled “GPIB” which stands for General Purpose Interface Bus. On some equipment this can also be labelled as “HPIB” after the company that originally invented it.",
+        "Commercial USB to GPIB adapters contain a lot of features and functionality, but are also very expensive ($500+ new). This is well out of price range for most hobbyists, as well as plenty of engineers and scientists. A lot of people don’t need all of the advanced GPIB communication functionality; some are just looking to download multimeter readings or oscilloscope waveforms to their PC. This project aims to implement as much GPIB communication functionality as possible, while still remaining accessible.",
+        "Another limitation of your typical USB to GPIB adapter is the development environment restriction due to the required drivers. For example, these vendors only provide Linux drivers for Red Hat-based distributions, but these drivers do not include MATLAB bindings! Instead of having to deal with all sorts of GPIB and VISA driver stuff, this GPIBUSB adapter presents itself to the attached PC as a serial port, allowing a wide variety of operating systems and development environments to utilize it. So although this means that this adapter is NOT a drop in replacement for conventional ones, this flexibility is desired by many."
+      ]
+    }
   },
   {
     "title": "antiAFK",
@@ -21,6 +27,17 @@
       "Randomizes keypresses",
       "Stay logged into your favourite game!"
     ],
-    "description": "This is the extended description for the antiAFK"
+    "description": {
+      "About": [
+        "This code turns an Arduino Leonardo-compatible board into a USB keyboard which provides periodic random keypresses to the attached computer. The time between key press events are defined by two parameters, period and variance, such that period +- random(variance) is when the next key will be pressed. This value is generated down to 1 millisecond resolution. Both period and variance can be changed by the user and is preserved through power loss.",
+        "Once the appropriate amount of time has elapsed, a random key from a pre-defined set is sent to PC. By default this is wasd and space. This key set can be changed by the user and is preserved through power loss."
+      ],
+      "Purpose": [
+        "The inspiration for this project came from my time playing MMORPGs. These games usually involve a persistent online world that involve you logging into a server in order to play. Typically when a player reaches maximum level, these games feature some sort of \"end-game\" group content, commonly referred to as dungeons, raids, or something else. Because of the group requirements, guilds will schedule a time for everyone to login in order to tackle it.",
+        "Here is where the problem is. Some of these games are very popular can will have a login queue. Sometimes this delay can be upwards of an hour for some servers in games like World of Warcraft. This means you have to login well ahead of time of the event , and also ensure that you do not get logged out. Most of these online games will have a inactivity timeout period where you are automatically logged out after a certain time of no input.",
+        "Imagine this situation. Your raid is coming up, but your server is so popular that there is a 1 hour queue time. Thankfully you're already logged in, but you want to get up away from the computer. Normally you would get logged out, but instead by using the antiAFK you can stay logged in. Every few minutes it sends a key press in such a way that it really looks like a person is sitting there hitting a semi-random key on a USB keyboard every now-and-then.",
+        "This has the advantage over software solutions in that you are not running code that might get you flagged for \"botting\". Many MMORPGs will scan system memory to check for unauthorized software running. The antiAFK presents itself to the PC as a completely legitimate HID keyboard, the same as your real USB keyboard does!"
+      ]
+    }
   }
 ]
