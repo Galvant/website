@@ -15,6 +15,12 @@
         "Commercial USB to GPIB adapters contain a lot of features and functionality, but are also very expensive ($500+ new). This is well out of price range for most hobbyists, as well as plenty of engineers and scientists. A lot of people don’t need all of the advanced GPIB communication functionality; some are just looking to download multimeter readings or oscilloscope waveforms to their PC. This project aims to implement as much GPIB communication functionality as possible, while still remaining accessible.",
         "Another limitation of your typical USB to GPIB adapter is the development environment restriction due to the required drivers. For example, these vendors only provide Linux drivers for Red Hat-based distributions, but these drivers do not include MATLAB bindings! Instead of having to deal with all sorts of GPIB and VISA driver stuff, this GPIBUSB adapter presents itself to the attached PC as a serial port, allowing a wide variety of operating systems and development environments to utilize it. So although this means that this adapter is NOT a drop in replacement for conventional ones, this flexibility is desired by many."
       ]
+    },
+    "links": {
+      "Firmware": "https://github.com/Galvant/gpibusb-firmware",
+      "PCB": "https://github.com/Galvant/gpibusb-pcb",
+      "Documentation": "https://github.com/Galvant/gpibusb-documentation",
+      "Bootloader": "https://github.com/Galvant/gpibusb-bootloader"
     }
   },
   {
@@ -38,6 +44,10 @@
         "Imagine this situation. Your raid is coming up, but your server is so popular that there is a 1 hour queue time. Thankfully you're already logged in, but you want to get up away from the computer. Normally you would get logged out, but instead by using the antiAFK you can stay logged in. Every few minutes it sends a key press in such a way that it really looks like a person is sitting there hitting a semi-random key on a USB keyboard every now-and-then.",
         "This has the advantage over software solutions in that you are not running code that might get you flagged for \"botting\". Many MMORPGs will scan system memory to check for unauthorized software running. The antiAFK presents itself to the PC as a completely legitimate HID keyboard, the same as your real USB keyboard does!"
       ]
+    },
+    "links": {
+      "Firmware": "https://github.com/Galvant/antiAFK_firmware",
+      "PCB": "https://github.com/Galvant/antiafk-pcb"
     }
   }
 ]

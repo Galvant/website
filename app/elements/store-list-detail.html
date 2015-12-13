@@ -51,10 +51,7 @@
     <div style="padding:10px;">
       <paper-item>
         <div>
-          <iron-image src="{{product.image}}"
-                style="width:450px; height:300px;"
-                sizing="contain">
-          </iron-image>
+          <iron-image src="{{product.image}}" style="width:450px; height:300px;" sizing="contain"></iron-image>
         </div>
         <div style="padding:10px">
           <paper-item-body>
@@ -64,14 +61,19 @@
           <paper-dialog id="dialog">Please send an email to sales@galvant.ca to place an order.</paper-dialog>
         </div>
       </paper-item>
-      <ul>
-        <template is="dom-repeat" items="{{_toArray(product.description)}}">
-          <div class="description-title">{{item.name}}</div>
-          <template is="dom-repeat" items="{{item.value}}">
-            <div class="description-item">{{item}}</div>
-          </template>
+      
+      <template is="dom-repeat" items="{{_toArray(product.description)}}">
+        <h1>{{item.name}}</h1>
+        <template is="dom-repeat" items="{{item.value}}">
+          <div class="description-item">{{item}}</div>
         </template>
-      </ul>
+      </template>
+      
+      <h1>Links</h1>
+      <template is="dom-repeat" items="{{_toArray(product.links)}}">
+        <span>{{item.name}}</span>: <a href="{{item.value}}">{{item.value}}</a><br>
+      </template>
+      
     </div>
   </template>
 </dom-module>
