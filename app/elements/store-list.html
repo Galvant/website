@@ -11,7 +11,7 @@
     }
   </style>
   <template>
-    <iron-ajax auto url="products.json" handleAs="json" on-response="hresponse"></iron-ajax>
+    <iron-ajax auto url="../products.json" handleAs="json" on-response="hresponse"></iron-ajax>
       <template is="dom-repeat" items="{{products}}">
         <paper-item style="padding:10px" on-tap="productItemSelected" mypath$="{{item.link}}">
           <div>
